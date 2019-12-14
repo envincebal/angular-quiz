@@ -10,19 +10,19 @@ import { Quiz, Question } from './quiz.model';
 export class QuestionsService {
   constructor(private http: HttpClient) {}
 
-  public getQuizzes() {
+  public getQuizzes(){
     return this.http.get(`./assets/quiz-list.json`).pipe(
-      map((result: any[]) => {
-        return result.map(r => new Quiz(r.label, r.name, r.description, r.fileName));
+      map((results: any[]) => {
+        return results.map(r => new Quiz(r.label, r.name, r.description, r.fileName));
       })
     );
   }
 
-  public getQuestions(fileName: string) {
+  public getQuestions(fileName: string){
     return this.http.get(`./assets/${fileName}.json`).pipe(
-      map((result: any[]) => {
-        return result.map(r => new Question(r.label, r.choices));
+      map((results: any[]) => {
+        return results.map(r => new Question (r.label, r.choices));
       })
-    );
+    )
   }
 }
