@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<mat-card >
+  <div class="results">
+    <h2>Results</h2>
+    <div class="answer" *ngFor='let a of answers.values' [ngClass]='{correct: a.correct}'>
+        {{a.value}}
+      <span class="guide"> 
+          {{a.correct}}
+      </span>
+    </div>
+
+    <button routerLink='/welcome' class='btn btn-primary'>Start Over</button>
+  </div>
+  </mat-card>
+</body>
+</html>

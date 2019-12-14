@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <mat-card>
+    <div *ngIf='quiz && !questions' class='spinner-grow text-primary'>
+        Loading...
+    </div>
+
+    <div class='quiz'*ngIf='questions'>
+
+        <div class='questions' *ngIf='!showResults'>
+            <app-question-form
+            [question]='questions[currentQuestionIndex]'
+            (onChoiceMade)='updateChoice($event)'>
+            </app-question-form>
+
+            <button 
+                class='btn btn-success'
+                (click)='nextOrViewResults()'
+                [disabled]='!answers.values[currentQuestionIndex]'
+                >{{currentQuestionIndex === questions.length - 1 ? 'View Results' : 'Next'}}
+            </button>
+
+        </div>
+
+        <app-results *ngIf='showResults' [answers]='answers'></app-results>
+    </div>
+</mat-card>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="welcome-container">
+    <mat-card color="primary">
+      <h2 class="title"> Choose a quiz</h2>
+    </mat-card>
+    <div class="quiz-choice">
+      <div *ngFor="let q of quiz">
+        <mat-card>
+          <mat-card-title>{{q.label}}</mat-card-title>
+          <mat-card-actions>
+            <button mat-button color="secondary" class="btn btn-primary">
+              <a routerLink="/{{q.name}}" class="btn btn-primary">Start quiz</a> 
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

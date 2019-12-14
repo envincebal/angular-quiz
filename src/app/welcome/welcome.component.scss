@@ -1,0 +1,21 @@
+.welcome-container {
+  margin: auto;
+  text-align: center;
+  background-color: #f08e61;
+  max-width: 700px;
+  border-radius: 5px;
+  padding: 10px;
+  
+  .btn{
+    width: 100px;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
